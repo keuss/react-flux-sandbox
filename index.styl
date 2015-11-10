@@ -1,0 +1,176 @@
+// backgrounds
+background = #eeeeee
+backgroundDarkGreen = #0b6739
+bgGreen = #468112
+bgGreen2 = #639000
+bgLightGray2 = #f4f4f4
+bgLightGray3 = #dfdfdf
+bgMediumGray = #818181
+bgDarkGray = #5b5b5b
+
+// borders
+borderGreen = #94c700
+borderDarkGreen = #74a046
+borderGray= rgba(0, 0, 0, 0.2)
+borderLightGray = rgba(0, 0, 0, 0.1)
+
+// text
+textDarkGreen = #0a5530
+textGreen = #759e00
+textGray = #939393
+textGray2 = #8c8c8c
+textDarkGray = #444444
+textPink = #fd2f74
+
+// gradiants
+lightGreenGradient = linear-gradient(0deg, textGreen 0%, borderGreen 100%)
+lightOrangeGradient = linear-gradient(0deg, #fa4800 0%, #fb6a00 100%)
+lightPinkGradient = linear-gradient(0deg, #ce225d 0%, buttonPink 100%)
+
+// others
+buttonPink = #fd2d73
+inputDarkGray = #454142
+
+body
+  background-color #E8EEEF
+  color inputDarkGray
+  font-family 'Open Sans', sans-serif
+
+.disabled
+  opacity 0.5
+  cursor initial
+
+.pointer
+  cursor pointer
+
+.box
+  background-color #DFF3F7
+  border 1px solid borderLightGray
+  &.activeBox
+    border-top none
+    border-right 1px solid borderLightGray
+    border-left 1px solid borderLightGray
+    border-bottom 1px solid borderLightGray
+    margin-left -1px
+    margin-right -1px
+    margin-bottom 0
+  box-shadow 0px 2px 4px 0px borderLightGray
+  margin-bottom 35px
+  &.withHelp
+    position absolute
+    width 100%
+    z-index 2
+    align-items flex-start
+    display flex
+    flex-flow row wrap
+    justify-content space-between
+    > .boxContentWrapper
+      flex 2 1 0%
+      margin-right 4%
+    > .boxHelp
+      flex 1 1 0%
+      > .boxHelpInner
+        margin-left -8%
+    .icon-Info
+      color textGreen
+  h3
+    font-size 18px
+    text-transform uppercase
+    color textPink
+    margin-bottom 30px
+  hr
+    border-color borderLightGray
+    border-top none
+
+.boxHeader, .boxHelpHeader
+  height 80px
+  padding 25px 30px
+  position relative
+  h2
+    font-size 24px
+    font-weight 300
+    line-height 30px
+    text-transform uppercase
+    color textGreen
+    margin-left 50px
+    margin-right 50px
+  h2.baremeHeader
+    margin-left 0
+  &.withAction
+    display flex
+    padding 0
+    > .headerTitle
+      position relative
+      flex 1 1 auto
+      > .iconTitle
+        top 25px
+    > .headerRadios
+      align-self center
+      flex 0 0 auto
+      width 200px
+    > .action
+      flex 0 0 auto
+      padding 0 30px
+      padding-left 20px
+      line-height 80px
+      border-left 1px solid borderLightGray
+      text-transform uppercase
+      > .icon
+        vertical-align sub
+        font-size 30px
+        color buttonPink
+        margin-right 20px
+    h2
+      padding 25px 30px
+
+.boxHeader
+  border-bottom 1px solid borderLightGray
+
+.boxHelpHeader
+  padding-left 0
+  margin-left -10px
+  h2
+    margin 0
+
+.boxContent
+  padding 25px 30px
+
+.boxOuterContent
+  padding 25px 0
+
+.boxInnerContent
+  padding 0 30px
+
+.iconTitle
+  position absolute
+  left 30px
+  color textGreen
+  font-size 30px
+
+.iconTitleSide
+  position absolute
+  right 30px
+  top 25px
+  color textGray
+  font-size 30px
+
+.boxWarning
+  align-items center
+  display flex
+  margin-bottom 30px
+.boxWarningIcon
+  color textPink
+  font-size 32px
+  margin-right 15px
+
+.formField
+  margin-bottom 30px
+  &.indented
+    padding-left 40px
+  &:last-child
+    margin-bottom 0
+  &.withMargin:last-child
+    margin-bottom 30px
+
+input
+  border none
