@@ -7,7 +7,7 @@ export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onSubmit = this.onSubmit.bind(this);
+    this.addPerson = this.addPerson.bind(this);
   }
 
   render() {
@@ -17,7 +17,7 @@ export default class MyForm extends React.Component {
         <header className="boxHeader">
           <h2>Test form with flux</h2>
         </header>
-        <form onSubmit={this.onSubmit}>
+        <form>
           <div className="boxContent">
             <div className="formField">
               <label>Nom : </label>
@@ -33,8 +33,7 @@ export default class MyForm extends React.Component {
             </div>
           </div>
           <div className="boxContent">
-            <input type="submit"
-              value="Enregister"/>
+            <button id="addBtn" type="button" onClick={this.addPerson}>Ajouter</button>
           </div>
         </form>
       </section>
@@ -47,9 +46,10 @@ export default class MyForm extends React.Component {
     };
   }
 
-  onSubmit() {
-    //e.preventDefault();
-    alert('onSubmit hit with : ' + JSON.stringify(this.props.currentPerson));
+  addPerson() {
+    // play with type="submit" add e + e.preventDefault
+    // e.preventDefault();
+    alert('addPerson hit with : ' + JSON.stringify(this.props.currentPerson));
   }
 }
 
