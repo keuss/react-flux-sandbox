@@ -2,25 +2,28 @@ import { Store } from 'fluxx';
 
 import {
   INIT,
-  UPDATE_ATTR_FORM
+  UPDATE_ATTR_FORM,
+  ADD_PERSON
 } from './actions/types';
 
 export default Store(on => {
   let person;
+  let personList = [];
 
   on(INIT, payload => {
-    //console.log('INIT', payload);
-    person = payload.p;
+    person = payload.defaultPerson;
   });
 
   on(UPDATE_ATTR_FORM, payload => {
-    //console.log('UPDATE_ATTR_FORM', payload);
     person[payload.key] = payload.value;
   });
 
-  return {
-    // getters
-    person: () => person
-  };
+  on(ADD_PERSON, payload => {
+    personList.push(payload.newPerson);
+  });
 
+  return {
+    person: () => person,
+    personList: () => personList
+  };
 });

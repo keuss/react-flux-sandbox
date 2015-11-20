@@ -1,17 +1,14 @@
-import Q from 'q';
-
-import { INIT, UPDATE_ATTR_FORM } from './types';
-
-// for test
-let  p = {name: "Richard", age: "33"};
+import { INIT, UPDATE_ATTR_FORM, ADD_PERSON } from './types';
 
 export function init() {
-  console.log('init creators ...');
-  INIT({ p });
+  const defaultPerson = {name: "Richard", age: "33"};
+  INIT({ defaultPerson });
 }
 
 export function updatePerson(key, value) {
-  //console.log('updatePerson key', key);
-  //console.log('updatePerson value', value);
   UPDATE_ATTR_FORM({ key, value });
+}
+
+export function updatePersonList(newPerson) {
+  ADD_PERSON({ newPerson })
 }

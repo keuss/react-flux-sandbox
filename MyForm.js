@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { updatePerson } from './actions/creators';
+import { updatePerson, updatePersonList } from './actions/creators';
 
 
 export default class MyForm extends React.Component {
@@ -11,13 +11,13 @@ export default class MyForm extends React.Component {
   }
 
   render() {
-    console.log('MyForm render currentPerson', this.props.currentPerson);
+    console.log('MyForm render props', this.props);
     return (
       <section className="box">
         <header className="boxHeader">
           <h2>Test form with flux</h2>
         </header>
-        <form>
+        <form className="person-from">
           <div className="boxContent">
             <div className="formField">
               <label>Nom : </label>
@@ -36,6 +36,7 @@ export default class MyForm extends React.Component {
             <button id="addBtn" type="button" onClick={this.addPerson}>Ajouter</button>
           </div>
         </form>
+        { this.props.personList.length > 0 ? this.renderAllPersons(this.props.personList) : null }
       </section>
     );
   }
@@ -49,11 +50,25 @@ export default class MyForm extends React.Component {
   addPerson() {
     // play with type="submit" add e + e.preventDefault
     // e.preventDefault();
-    alert('addPerson hit with : ' + JSON.stringify(this.props.currentPerson));
+    const newPerson = Object.assign({}, this.props.currentPerson);
+    // alert('addPerson hit with : ' + JSON.stringify(newPerson));
+    updatePersonList(newPerson);
+    // NOK !?!
+    // updatePersonList(this.props.currentPerson);
   }
+
+  renderAllPersons(personList) {
+    return (
+      <ul>
+        {personList.map( (pers, i) => <li key={i}>{pers.name} (Age : {pers.age})</li>)}
+      </ul>
+    );
+  }
+
 }
 
 
 MyForm.propTypes = {
-  currentPerson: React.PropTypes.object.isRequired
+  currentPerson: React.PropTypes.object.isRequired,
+  personList: React.PropTypes.array.isRequired
 };

@@ -5,15 +5,15 @@ import { init } from './actions/creators';
 import MyForm from './MyForm';
 import personStore from './store';
 
-console.log("index.js ...");
-
 let unregister;
 
 export default {
   enter() {
+    console.log('enter ...');
     unregister = Store.onChange(personStore)(() => {
+      console.log('onChange store ...');
       ReactDOM.render(
-        <MyForm currentPerson={personStore.person()} />, document.getElementById('container')
+        <MyForm currentPerson={personStore.person()} personList={personStore.personList()} />, document.getElementById('container')
       );
     });
     init();

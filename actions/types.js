@@ -2,5 +2,6 @@ import { Action } from 'fluxx';
 
 export default Action.create(
   'INIT',
-  'UPDATE_ATTR_FORM'
+  'UPDATE_ATTR_FORM',
+  'ADD_PERSON'
 );
