@@ -36,6 +36,7 @@ export default class MyForm extends React.Component {
             <button id="addBtn" type="button" onClick={this.addPerson}>Ajouter</button>
           </div>
         </form>
+        <div ref="error"></div>
         { this.props.personList.length > 0 ? this.renderAllPersons(this.props.personList) : null }
       </section>
     );
@@ -47,11 +48,21 @@ export default class MyForm extends React.Component {
     };
   }
 
+  alertPerson(p) {
+    console.log(p);
+    ReactDOM.findDOMNode(this.refs.error).innerHTML = p.name + ' existe déjà !';
+  }
+
+  updateList(newPerson) {
+    updatePersonList(newPerson);
+    ReactDOM.findDOMNode(this.refs.error).innerHTML = '';
+  }
+  
   addPerson() {
     // play with type="submit" add e + e.preventDefault
     // e.preventDefault();
     const newPerson = Object.assign({}, this.props.currentPerson);
-    this.props.personList.find( p => p.name === newPerson.name) ? alert(newPerson.name + ' existe déjà !') : updatePersonList(newPerson);
+    this.props.personList.find( p => p.name === newPerson.name) ? this.alertPerson(newPerson) : this.updateList(newPerson);
   }
 
   renderAllPersons(personList) {
