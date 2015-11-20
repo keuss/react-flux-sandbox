@@ -6,9 +6,9 @@ export function init() {
 }
 
 export function updatePerson(key, value) {
-  UPDATE_ATTR_FORM({ key, value });
+  // TODO use UPDATE_ATTR_FORM
 }
 
 export function updatePersonList(newPerson) {
-  ADD_PERSON({ newPerson })
+  // TODO use ADD_PERSON
 }

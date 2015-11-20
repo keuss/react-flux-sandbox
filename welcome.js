@@ -13,7 +13,7 @@ export default {
     unregister = Store.onChange(personStore)(() => {
       console.log('onChange store ...');
       ReactDOM.render(
-        <MyForm currentPerson={personStore.person()} personList={personStore.personList()} />, document.getElementById('container')
+        <MyForm />, document.getElementById('container')
       );
     });
     init();

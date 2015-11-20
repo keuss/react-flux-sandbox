@@ -15,11 +15,11 @@ export default Store(on => {
   });
 
   on(UPDATE_ATTR_FORM, payload => {
-    person[payload.key] = payload.value;
+    // TODO update person ...
   });
 
   on(ADD_PERSON, payload => {
-    personList.push(payload.newPerson);
+    // TODO update personList
   });
 
   return {

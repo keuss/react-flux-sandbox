@@ -2,11 +2,13 @@
 Formation Maroc Front React & Flux
 
 # TODO
-- Dynamiser le formulaire de test pour les données 'name' et 'age' de l'objet 'Person'.
-- Mettre à jour les actions qui appellent le store.
-- Utiliser le store pour avoir l'objet saisi dans l'alert javascript.
-- Afficher une alert lors du submit avec le contenu de l'objet person.
-- Encore du temps : ajouter deux 'radio btn' pour afficher / cacher le btn 'enregistrer' (gérer un état react)
+- Dynamiser le formulaire de test (via 'flux') pour les données 'name' et 'age' de l'objet 'person'
+- Mettre à jour les actions qui appellent le store
+- Metter à jour le store
+- Penser aux props à passer au composant (ici pad d'etat !) : cf. alert React sur console ...
+- Ajouter la personne du formulaire dans une liste de personnes (une props)
+- Encore du temps : afficher la liste des personnes ajoutées sous le formulaire (ul et li par exemple)
+- Présentation d'abyssa
 
 Voir MyForm.js.
 
