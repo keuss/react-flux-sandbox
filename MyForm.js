@@ -51,10 +51,7 @@ export default class MyForm extends React.Component {
     // play with type="submit" add e + e.preventDefault
     // e.preventDefault();
     const newPerson = Object.assign({}, this.props.currentPerson);
-    // alert('addPerson hit with : ' + JSON.stringify(newPerson));
-    updatePersonList(newPerson);
-    // NOK !?!
-    // updatePersonList(this.props.currentPerson);
+    this.props.personList.find( p => p.name === newPerson.name) ? alert(newPerson.name + ' existe déjà !') : updatePersonList(newPerson);
   }
 
   renderAllPersons(personList) {

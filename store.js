@@ -19,7 +19,7 @@ export default Store(on => {
   });
 
   on(ADD_PERSON, payload => {
-    personList.push(payload.newPerson);
+    personList = personList.concat(payload.newPerson);
   });
 
   return {
